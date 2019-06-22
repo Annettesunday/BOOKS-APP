@@ -11,10 +11,10 @@ function App() {
     <div className="container-fluid">
       <Header />
       <Switch>
-      <Route exact path="/" component={HomePage} />
-      <Route path="/courses" component={CoursesPage} />
-      <Route exact path="/about" component={AboutPage} />
-      <Route  component={PageNotFound} />
+        <Route exact path="/" component={HomePage} />
+        <Route path="/courses" component={CoursesPage} />
+        <Route exact path="/about" component={AboutPage} />
+        <Route component={PageNotFound} />
       </Switch>
     </div>
   );
