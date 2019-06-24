@@ -72,11 +72,19 @@
     },
     {
       "id": 11,
-      "title": "Test",
+      "title": "Securing React Apps with Auth0",
       "authorId": 1,
-      "category": "Test Cat",
-      "createdAt": 1561378999342,
-      "slug": "test"
+      "category": "Documentary",
+      "createdAt": 1561384117573,
+      "slug": "securing-react-apps-with-auth0"
+    },
+    {
+      "id": 12,
+      "title": "Securing React Apps with Auth0",
+      "authorId": 3,
+      "category": "Film",
+      "createdAt": 1561384151749,
+      "slug": "securing-react-apps-with-auth0"
     }
   ],
   "authors": [
