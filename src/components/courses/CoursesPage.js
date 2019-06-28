@@ -29,7 +29,6 @@ class CoursesPage extends React.Component {
   }
 
   render() {
-    console.log(">>>>>>>", this.props.loading)
     return (
       <>
         {this.state.redirectToAddCoursePage && <Redirect to="/course" />}
