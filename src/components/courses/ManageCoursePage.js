@@ -5,6 +5,7 @@ import * as authorActions from "../../redux/actions/authorActions";
 import PropTypes from "prop-types";
 import CourseForm from "./CourseForm";
 import { newCourse } from "../../../tools/mockData";
+import Spinner from "../common/Spinner";
 
 function ManageCoursePage({
   courses,
@@ -23,7 +24,7 @@ function ManageCoursePage({
         alert("Loading courses failed" + error);
       });
     } else {
-      setCourse({...props.course})
+      setCourse({ ...props.course });
     }
 
     if (authors.length === 0) {
@@ -48,7 +49,9 @@ function ManageCoursePage({
     });
   }
 
-  return (
+  return authors.length === 0 || courses.length === 0 ? (
+    <Spinner />
+  ) : (
     <CourseForm
       course={course}
       errors={errors}
@@ -70,12 +73,15 @@ ManageCoursePage.propTypes = {
 };
 
 export function getCourseBySlug(courses, slug) {
-  return courses.find(course => course.slug === slug) || null
+  return courses.find(course => course.slug === slug) || null;
 }
 
 function mapStateToProps(state, ownProps) {
   const slug = ownProps.match.params.slug;
-  const course = slug && state.courses.length > 0 ? getCourseBySlug(state.courses, slug) : newCourse
+  const course =
+    slug && state.courses.length > 0
+      ? getCourseBySlug(state.courses, slug)
+      : newCourse;
   return {
     course,
     courses: state.courses,
